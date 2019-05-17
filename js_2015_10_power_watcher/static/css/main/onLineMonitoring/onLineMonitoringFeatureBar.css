@@ -1,0 +1,127 @@
+/**
+ *  在线监测工具条样式
+ */
+/**
+ * 在线监测工具条标题样式
+ */
+#onLineMonitoringFeatureBarTitle{
+	position: absolute;
+	top: 13px;
+	left: 6px;
+	width: 540px;
+	height: 25px;
+	text-shadow:3px 3px 3px #000000;
+}
+/**
+ * 在线监测工具条主体样式
+ */
+#onLineMonitoringFeatureBarSubject{
+	position: absolute;
+	top: 46px;
+	left: 6px;
+	width: 1000px;
+	height: 23px;
+}
+/**
+ * 在线监测当前功能样式
+ */
+#onLineMonitoringCurrentFunction{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	width: 220px;
+	float: left;
+	text-shadow:3px 3px 3px #000000;
+}
+/**
+ * 在线监测当前单位样式
+ */
+#onLineMonitoringCurrentUnit{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	width: 315px;
+	float: left;
+	text-shadow:3px 3px 3px #000000;
+}
+/**
+ * 在线监测功能时间选择器样式
+ */
+#onLineMonitoringFeatureBarTimePickers{
+	width: 165px;
+    height: 23px;
+    margin-left: 10px;
+    float: left;
+}
+#onLineMonitoringTimeSelectorTitle{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	width: 43px;
+    float: left;
+    text-shadow:3px 3px 3px #000000;
+}
+#onLineMonitoringSelectTime{
+	width: 75px;
+    height: 19px;
+    float: left;
+}
+/**
+ * 在线监测功能系统对象样式
+ */
+#onLineMonitoringSystemType{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	width: 45px;
+	height: 23px;
+	float: left;
+	text-shadow:3px 3px 3px #000000;
+}
+/**
+ * 在线监测功能系统对象选择器样式
+ */
+#onLineMonitoringSystemSelector{
+	width: 82px;
+	height: 23px;
+	float: left;
+}
+/**
+ * 在线监测工具条时间选择器logo样式
+ */
+#onLineMonitoringFeatureBarTimeLogo{
+	width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    float: left;
+    background : url(../../../img/main/dataAdmin/timePickerLogo.png);
+}
+/**
+ * 在线监测功能查询按钮样式
+ */
+#onLineMonitoringSearchButton{
+	font-size: 16px;
+	font-weight: 900;
+	right:125px;
+	position: absolute;
+	border: 3px solid #273238;
+	color: #FFFFFF;
+	top:20px;
+	text-align: center;
+	margin-left: 10px;
+    line-height: 35px;
+	width: 60px;
+	height: 35px;
+	border-radius: 5px;
+	float: left;
+}
+/**
+ * 在线监测工具条查询按钮鼠标悬停样式
+ */
+#onLineMonitoringSearchButton:hover{
+	background-color: #FD5822;
+	box-shadow: #000000 5px 5px 10px;
+	text-shadow:3px 3px 3px #000000;
+	cursor: pointer;
+}
+

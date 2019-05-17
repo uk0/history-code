@@ -1,0 +1,17 @@
+/*节能统计模块样式*/
+/*节能统计默认模块*/
+#energyDataStatistical{
+	/*
+	 * 默认显示
+	 */
+	margin-left: -100%;
+}
+#energyDataStatisticalMainControl{
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	background: #364751;
+}

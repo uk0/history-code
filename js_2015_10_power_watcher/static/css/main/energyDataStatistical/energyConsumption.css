@@ -1,0 +1,124 @@
+/*
+ * 节能统计模块：能耗监测 载体样式
+ */
+
+#energyConsumptionMain {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	transition: left 1s; 
+	-webkit-transition: left 1s;
+	-moz-transition: left 1s;
+}
+/*
+ * 节能统计模块:能耗监测 筛选工具样式
+ */
+#energyConsumptionFilter{
+	width: 100%;
+	height: 30px;
+	background-color: #E8E7E4;
+}
+#energyConsumptionFilter div{
+	float: left;
+	margin-top: 3px;
+	margin-left: 10px;
+}
+/*
+ * 为Echarts准备一个div
+ */
+#energyConsumptionDrawPicture {
+	height: 400px;
+	width: 100%;
+}
+/**
+ * 能耗预测锅炉主窗体
+ */
+#energyConsumptionBoilerMain{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: -100%;
+	overflow: auto;
+	transition: left 1s; 
+	-webkit-transition: left 1s;
+	-moz-transition: left 1s;
+}
+/**
+ * 能耗锅炉显示工具条
+ */
+#energyConsumptionBoilerBar{
+	width: 100%;
+	height: 30px;
+	background-color: #E8E7E4;
+}
+#energyConsumptionBoilerBar div{
+	float: left;
+}
+/**
+ * 能耗锅炉显示主体
+ */
+#energyConsumptionBoilerBody{
+	top: 30px;
+	bottom: 0;
+	width: 100%;		
+}
+
+#boilderImg{
+	float: left;
+}
+
+.boilerInfo{
+	height: 218px;
+	width: 470px;
+	float: left;
+	position: relative;
+}
+.boilerName{
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	right: 0;
+	top: 0;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: 900;
+	text-shadow: 1px 1px 2px black;
+}
+.boilerDailyGas{
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	right: 0;
+	top: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: 900;
+	text-shadow: 1px 1px 2px black;
+}
+.boilerDailyStream{
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	right: 0;
+	top: 60px;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: 900;
+	text-shadow: 1px 1px 2px black;
+}
+.boilerDailyEnergy{
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	right: 0;
+	top: 90px;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: 900;
+	text-shadow: 1px 1px 2px black;
+}

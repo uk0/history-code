@@ -1,0 +1,256 @@
+/*统计分析模块样式*/
+/*统计分析模块主样式*/
+#statisticAnalysisMain{
+	position: absolute;/*绝对定位*/
+	width: 100%;/*左右自适应充满*/
+	top: 0px;/*上边距0*/
+	bottom: 0px;/*下边距0*/
+	background: #364751;
+}
+/*
+ * 统计分析模块Tab按钮载体
+ */
+#statisticAnalysisMainCovertChildrenFeatureControl{
+	position: absolute;
+	top: 8px;
+	right: 0;
+	width: 99%;
+	height: 30px;
+	z-index: 1;
+	cursor: pointer;
+}
+/*统计分析模块功能切换控件*/
+.statisticAnalysisMainCovertChildrenFeature{
+	color: #FFF;
+	border: 3px solid #273238;
+	height: 26px;
+	width: auto;
+	display: inline;
+	padding: 5px;
+	font-size: 15px;
+	font-weight: 800;
+	line-height: 26px;
+	border-radius: 10px 10px 0 0;
+	margin-left: 5px;
+}
+/*统计分析模块功能切换控件 : 鼠标移入*/
+.statisticAnalysisMainCovertChildrenFeature:hover{
+	background: #273238;
+}
+/*节能统计模块 子功能载体 主体*/
+#statisticAnalysisMainChildrenFeatureContent{
+	position: absolute;
+	width: 100%;
+	top: 36px;
+	bottom: 0px;
+	border-top: 3px solid #273238;
+	overflow: hidden;
+}
+/*统计分析功能Div*/
+.statisticAnalysisFeatureDiv{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #364751;
+	margin-left: -100%;
+	/*过渡效果*/
+	transition: margin-left 1s, opacity 1s;
+	-moz-transition: margin-left 1s, opacity 1s;
+	-webkit-transition: margin-left 1s, opacity 1s;
+	overflow: hidden;
+	z-index: 1;
+}
+/*开发中样式*/
+.statisticAnalysisDevelopingDiv{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #364751;
+	color: #FFF;
+	margin-left: -100%
+	/*过渡效果*/
+	transition: margin-left 1s, opacity 1s;
+	-moz-transition: margin-left 1s, opacity 1s;
+	-webkit-transition: margin-left 1s, opacity 1s;
+	overflow: auto;
+}
+
+/*指标综合对比分析样式*/
+/*功能主体*/
+#targetSyntheticalAnalysisMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+/*
+ * 统计分析模块:指标综合对比分析筛选工具 样式
+ */
+#targetSyntheticalAnalysisFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#targetSyntheticalAnalysisFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/*
+ * 为Echarts准备一个div
+ */
+#targetSyntheticalAnalysisDrawPicture{
+	height:400px;
+}
+
+/*用水量统计样式*/
+/*功能主体*/
+#waterStatisticsFeatureMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+/*
+ * 用水量统计筛选工具样式
+ */
+#waterStatisticsFeatureFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#waterStatisticsFeatureFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/*
+ * 为Echarts准备一个div
+ */
+#waterStatisticsFeatureDrawPicture{
+	height:400px;
+}
+/*指标异常分析样式样式*/
+/*功能主体*/
+#targetWrongAnalysisMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+/*
+ * 指标异常分析筛选工具样式
+ */
+#targetWrongAnalysisFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#targetWrongAnalysisFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/*
+ * 为echarts准备div
+ */
+ #targetWrongAnalysisDrawPicture{
+	height:400px;
+}
+/*能耗系统对比分析样式*/
+/*功能主体*/
+#energySystemAnalysisMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+#energySystemAnalysisFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#energySystemAnalysisFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/*
+ * 为Echarts准备一个div
+ */
+#energySystemAnalysisDrawPicture{
+	height:400px;
+}
+/*
+ * 设置Table样式
+ */
+#energySystemAnalysisDrawTable{
+    border: 1px solid #D3D0CB;
+    width:100%;
+}
+/*输差统计分析样式*/
+/*功能主体*/
+#outputDifferentStatisticsMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+/*
+ * 输差统计筛选工具样式
+ */
+#outputDifferentStatisticsFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#outputDifferentStatisticsFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/*
+ * 设置Table样式
+ */
+#outputDifferentStatisticsDrawTable{
+    border: 1px solid #D3D0CB;
+    width:100%;
+}
+/*系统效率样式*/
+/*功能主体*/
+#systemEfficiencyMain{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: #FFF;
+	overflow: auto;
+}
+/*
+ * 系统效率筛选工具样式
+ */
+#systemEfficiencyFilter{
+	width: 100%;
+	height:30px;
+	background-color: #E8E7E4;
+}
+#systemEfficiencyFilter div{
+	float:left;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+#systemEfficiencyDrawPicture{
+	height:400px;
+}

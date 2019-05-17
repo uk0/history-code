@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HuaChing Pay-Manager系统</title>
+		<!--JQuery基础JS-->
+		<script type="text/javascript" src="../static/js/jquery/jquery.js" charset="utf-8"></script>
+		<link type="image/x-icon" rel="shortcut icon" href="../static/img/login/favicon.ico" />
+		<script type="text/javascript" src="../static/js/esayui/jquery-easyui-1.4.4/jquery.easyui.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../static/js/esayui/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../static/js/esayui/jquery-easyui-1.4.4/jquery.easyui.mobile.js" charset="utf-8"></script>
+		<!--Toast通知控件-->
+		<script src="../static/js/toast/toast.js" type="text/javascript" charset="utf-8"></script>
+		<!--Ajax请求工具JS-->
+		<script type="text/javascript" src="../static/js/utils/ajax/ajaxUtils.js" charset="utf-8"></script>
+		<!--页面全局配置JS-->
+		<script src="../static/js/config/config.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 时间插件 -->
+		<script src="../static/js/utils/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Table创建工具 -->
+		<script src="../static/js/createTable/createTable.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Echarts插件 -->
+		<script src="../static/js/echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--Echarts数据解析工具-->
+		<script src="../static/js/echarts/echarts-utils.js" type="text/javascript" charset="utf-8"></script>
+		<!-- alertWin 报错弹窗 -->
+		<script type="text/javascript" src="../static/js/main/alertWin.js" charset="utf-8"></script>
+		<!--主界面用户接口控制初始化-->
+		<script src="../static/js/main/mainUIControl.js" type="text/javascript" charset="utf-8"></script>
+		<!--主功能上下文功能加载模块-->
+		<script src="../static/js/main/applicationContext.js" type="text/javascript" charset="utf-8"></script>
+		<!--主界面用户功能加载模块-->
+		<script src="../static/js/main/mainFeatureLoader.js" type="text/javascript" charset="utf-8"></script>
+		<!--主功能样式-->
+		<link rel="stylesheet" type="text/css" href="../static/css/main/main.css" />
+		<!--主页样式-->
+		<link rel="stylesheet" type="text/css" href="../static/css/main/mainPage.css" />
+		<!------------------------------------------功能模块样式------------------------------------------>
+		<!--数据管理样式 dataAdmin-->
+		<link rel="stylesheet" type="text/css" href="../static/css/main/dataAdmin/dataAdmin.css" />
+		<!--数据管理工具条样式 dataAdmin-->
+		<link rel="stylesheet" type="text/css" href="../static/css/main/dataAdmin/dataAdminFeatureBar.css" />
+		<!--数据管理功能条脚本-->
+		<script src="../static/js/featureBar/dataAdminFeatureBar.js" type="text/javascript" charset="utf-8"></script>
+		<!--数据管理脚本  dataAdmin-->
+		<script src="../static/js/dateGridTable/res/jquery-handsontable-master/handsontable.full.js"></script>
+		<link href="../static/js/dateGridTable/res/jquery-handsontable-master/handsontable.full.css" rel="stylesheet">
+		<!-- Excel 表格定制-->
+		<script src="../static/js/dateGridTable/HandTabLib.js" charset="utf-8"></script>
+		<!--数据管理:demo-->
+		<script src="../static/js/main/dataAdmin/demo.js" type="text/javascript" charset="utf-8"></script>
+		<!--主页组件-->
+		<script src="../static/js/main/mainPage.js" type="text/javascript" charset="utf-8"></script>
+		<!--正在开发中[提示模块]样式-->
+		<link rel="stylesheet" type="text/css" href="../static/css/main/developing/developing.css" />
+		<!--基础初始化脚本，一定放在最下面-->
+		<script src="../static/js/main/mainBase.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		/*全局设定*/
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "微软雅黑", "黑体";
+			/*border: 1px solid black;*/
+		}
+		/*头部设定*/
+        {# #364751;#}
+		#head {
+			width: 100%;
+			height: 90px;
+			background: #364751;
+			border-bottom: 5px solid #FD5822;
+			z-index: 11;
+		}
+		/*登录标题*/
+		#mainLogo {
+			position: absolute;
+            left: 58px;
+            top: 19px;
+            width: 186px;
+            height: 52px;
+            background: url(../static/img/main/logo.png);
+            background-repeat:no-repeat;
+	        background-size:100% 100%;-moz-background-size:100% 100%;
+		}
+		#featureMainPageButton{
+			position: absolute;
+			left: 305px;
+			width: 32px;
+			height: 32px;
+			top: 50px;
+			background: url(../static/img/main/mainPageButton.png);
+			transition: 1s left;
+			-webkit-transition: 1s left;
+			-moz-transition: 1s left;
+		}
+		#featureMainPageButton:hover{
+			left: 308px;
+		}
+		/*系统功能动画*/
+		@keyframes systemFeatureAni {
+			0% {
+				margin-top: -100%;
+			}
+			100% {
+				margin-top: 0px;
+			}
+		}
+		/*右上角功能列表*/
+		#systemFeatureList {
+			width: 570px;
+			height: 87px;
+			position: absolute;
+			right: 40px;
+			top: 3px;
+			/*重要 导航要在上层*/
+			z-index: 3;
+		}
+		/*右上角系统功能*/
+		.systemFeature {
+			float: right;
+			margin-left: 15px;
+			width: 80px;
+			height: 87px;
+			animation: systemFeatureAni 500ms;
+			-moz-animation: systemFeatureAni 500ms;
+			-webkit-animation: systemFeatureAni 500ms;
+			position: relative;
+		}
+		/*右上角系统功能鼠标移入*/
+		.systemFeature:hover {
+			border-bottom: 3px solid #FD5822;
+			background-color: #273238;
+			text-shadow:3px 3px 3px #000000;
+			cursor: pointer;
+		}
+		/*右上角按钮*/
+		.systemButton {
+			position: absolute;
+			width: 75px;
+			height: 66px;
+			top: 50%;
+			left: 50%;
+			margin-left: -38px;
+			margin-top: -33px;
+		}
+		/*右上角系统功能鼠标移入*/
+		.systemFeature:hover .systemChildrenFeatureList {
+			display: block;
+			cursor: pointer;
+		}
+		/*系统功能列表动画*/
+		@keyframes systemChildrenFeatureListAni {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		/*系统功能列表*/
+		.systemChildrenFeatureList {
+			position: absolute;
+			right: 0;
+			height: auto;
+			width: 120px;
+			padding-top: 87px;
+			animation: systemChildrenFeatureListAni 500ms;
+			-moz-animation: systemChildrenFeatureListAni 500ms;
+			-webkit-animation: systemChildrenFeatureListAni 500ms;
+			display: none;
+		}
+		/*系统功能子项*/
+		.systemChildrenFeature {
+			width: 100%;
+			height: 35px;
+			color: #FFF;
+			font-weight: 600;
+			background: #364751;
+			line-height: 35px;
+			text-align: center;
+			transition: background-color 1s;
+			-moz-transition: background-color 1s;
+			-webkit-transition: background-color 1s;
+			border: 1px solid #273238;
+		}
+		/*系统功能子项鼠标移入*/
+		.systemChildrenFeature:hover {
+			border-bottom: 3px solid #FD5822;
+			background: #273238;
+		}
+		/*主界面*/
+		#main {
+			position: absolute;
+			top: 95px;
+			bottom: 30px;
+			width: 100%;
+			background: #273238;
+		}
+		/*左侧树*/
+		#leftTree {
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			width: 20%;
+			background: #364751;
+			/*border-right: 5px solid #273238;*/
+			overflow: auto;
+			/*过渡时间应与右侧功能主体过渡时间配合*/
+			transition: left 500ms;
+			-moz-transition: left 500ms;
+			-webkit-transition: left 500ms;
+			z-index: 9;
+			cursor: pointer;
+		}
+		/*节点动画*/
+		@keyframes nodeAni {
+			0% {
+				margin-left: -100%;
+				opacity: 0;
+			}
+			100% {
+				margin-left: 0;
+				opacity: 1;
+			}
+		}
+		/*根节点*/
+		.RootNode {
+			height: 50px;
+			width: 100%;
+			border-bottom: 2px solid #273238;
+			position: relative;
+		}
+		/*回溯父节点按钮*/
+		#RootNodeBackButton {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			width: 17px;
+			height: 17px;
+			margin-top: -9px;
+			background: url(../static/img/main/backButton.png);
+			z-index: 10;
+		}
+		/*回溯按钮鼠标移入*/
+		#RootNodeBackButton:hover {
+			transform: translateX(-5px);
+			-moz-transform: translateX(-5px);
+			-webkit-transform: translateX(-5px);
+		}
+		/*根节点文本*/
+		.RootNodeText {
+			height: 50px;
+			width: 100%;
+			line-height: 50px;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 900px;
+			color: #FFF;
+			animation: nodeAni 500ms;
+			-moz-animation: nodeAni 500ms;
+			-webkit-animation: nodeAni 500ms;
+			text-shadow:3px 3px 3px #000000;
+		}
+		/*左侧树回退按钮*/
+		#leftTreeBackButton {
+			position: absolute;
+			width: 17px;
+			height: 50px;
+			right: 0px;
+			top: 50%;
+			margin-top: -25px;
+			background-color: #273238;
+			border-bottom-left-radius: 7px;
+			border-top-left-radius: 7px;
+			z-index: 10;
+		}
+		/*左侧树回退图片*/
+		#leftTreeBackButtonImg {
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			width: 17px;
+			height: 17px;
+			margin-top: -9px;
+			background: url(../static/img/main/LeftTreeBackButton.png);
+		}
+		/*左侧树回退图片鼠标移入*/
+		#leftTreeBackButton:hover #leftTreeBackButtonImg {
+			right: 2px;
+		}
+		/*树节点*/
+		.treeNode {
+			animation: nodeAni 500ms;
+			-moz-animation: nodeAni 500ms;
+			-webkit-animation: nodeAni 500ms;
+			height: 30px;
+			width: 92%;
+			margin-left: 5%;
+			line-height: 30px;
+			font-size: 15px;
+			font-weight: 200;
+			text-align: left;
+			color: #FFF;
+		}
+		/*树节点鼠标移入*/
+		.treeNode:hover {
+			background-color: #273238;
+			border-left: 5px solid #FD5822;
+			text-shadow:3px 3px 3px #000000;
+		}
+		/*左侧树显示按钮*/
+		#leftTreeShowButton {
+			position: absolute;
+			left: 0px;
+			top: 50%;
+			width: 20px;
+			height: 50px;
+			margin-top: -25px;
+			background-color: #273238;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			z-index: 8;
+		}
+		/*左侧树显示按钮图标*/
+		#leftTreeShowButtonImg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 17px;
+			height: 17px;
+			margin-left: -10px;
+			margin-top: -8px;
+			background: url(../static/img/main/LeftTreeShowButton.png);
+		}
+		/*左侧树显示按钮鼠标移入图标移位*/
+		#leftTreeShowButton:hover #leftTreeShowButtonImg {
+			margin-left: -7px;
+		}
+		/*左侧树列表*/
+		#leftTreeList {
+			width: 100%;
+			position: absolute;
+			top: 52px;
+			/*border: 2px solid red;*/
+		}
+		/*树节点列表样式*/
+		.treeListNodeList {
+			width: 93%;
+			margin-left: 7%;
+			transition: height 500ms;
+			-moz-transition: height 500ms;
+			-webkit-transition: height 500ms;
+		}
+		/*树节点动画*/
+		@keyframes treeNodeAni {
+			0% {
+				margin-left: -100%;
+				opacity: 0;
+			}
+			100% {
+				margin-left: 0;
+				opacity: 1;
+			}
+		}
+		/*所有树节点通用样式*/
+		.treeListNodeMain {
+			animation: treeNodeAni 500ms;
+			-moz-animation: treeNodeAni 500ms;
+			-webkit-animation: treeNodeAni 500ms;
+			font-weight: 100;
+			font-size: 12px;
+			color: #FFF;
+			height: 32px;
+			line-height: 32px;
+		}
+		/*所有节点鼠标移入 通用样式*/
+		.treeListNodeMain:hover {
+			background-color: #273238;
+			border-left: 5px solid #FD5822;
+		}
+		/*右侧主界面*/
+		#rightMain {
+			position: absolute;
+			top: 0px;
+			bottom: 5px;
+			right: 0px;
+			width: 79.7%;
+			/*过渡时间应与左侧树过渡时间配合*/
+			transition: width 500ms;
+			-moz-transition: width 500ms;
+			-webkit-transition: width 500ms;
+			overflow: auto;
+			background: #364751;
+		}
+		/*主页*/
+		.mainPageStyle{
+
+		}
+		/*功能Div*/
+		.featureDiv {
+			position: absolute;
+			width: 100%;
+			top: 81px;
+			bottom: 0px;
+			background: #FFF;
+			margin-left: -100%;
+			/*过渡效果*/
+			transition: margin-left 1s, opacity 1s;
+			-moz-transition: margin-left 1s, opacity 1s;
+			-webkit-transition: margin-left 1s, opacity 1s;
+			overflow: hidden;
+			z-index: 1;
+		}
+		/*开发中样式*/
+		.developingDiv {
+			position: absolute;
+			width: 100%;
+			margin-left: -100%;
+			top: 61px;
+			bottom: 0;
+			background: #FFF;
+			color: #FFF;
+			margin-left: -100%
+			/*过渡效果*/
+			transition: margin-left 1s, opacity 1s;
+			-moz-transition: margin-left 1s, opacity 1s;
+			-webkit-transition: margin-left 1s, opacity 1s;
+			overflow: auto;
+		}
+		/*页脚*/
+		#foot {
+			height: 30px;
+			width: 100%;
+			position: fixed;
+			bottom: 0px;
+			background: #364751;
+			line-height: 30px;
+			text-align: center;
+			font-size: 15px;
+			font-weight: 900;
+			color: darkgray;
+			border-top: 5px solid #FD5822;
+			z-index: 11;
+		}
+		/*
+		 * 弹出提示框DIV
+		 */
+		@keyframes ToastAni {
+			0% {
+				bottom: -100%;
+				opacity: 0;
+			}
+			30% {
+				bottom: 100px;
+				opacity: 0.7;
+			}
+			70% {
+				bottom: 100px;
+				opacity: 0.7;
+			}
+			100% {
+				bottom: -100%;
+				opacity: 0;
+			}
+		}
+		/*
+		 * 仿安卓Toast通知
+		 */		
+		.Toast {
+			position: fixed;
+			bottom: -100%;
+			left: 50%;
+			width: 200px;
+			margin-left: -100px;
+			border: 1px solid #222;
+			border-radius: 5px;
+			background-color: #000;
+			padding: 10px 0;
+			text-align: center;
+			opacity: 0.7;
+			z-index: 10;
+			color: #FFF;
+			animation: ToastAni 3s;
+			-moz-animation: ToastAni 3s;
+			-webkit-animation: ToastAni 3s;
+		}
+		/**sql漂浮框*/	
+		#sqllogdiv {
+			position: fixed;
+			bottom: 40px;
+			right: 15px;
+			border: 2px solid #F00;
+			z-index: 888;
+			width: 500px;
+			background-color: #FFE;
+		}
+	</style>
+
+	<body>
+		<!--头部-->
+		<div id="head">
+			<!--头部图像标签-->
+			<div id="mainLogo"></div>
+			<div id="featureMainPageButton"></div>
+		</div>
+
+		<!--系统功能导航-->
+		<div id="systemFeatureList">
+			<!--数据管理-->
+			<div id="dataAdminControl" class="systemFeature">
+				<div class="systemButton" style="background: url(../static/img/main/dataAdmin.png);">
+				</div>
+				<div class="systemChildrenFeatureList">
+				</div>
+			</div>
+		</div>
+		<!--功能展示区-->
+		<div id="main">
+			<div id="leftTree">
+				<!--根节点-->
+				<div class="RootNode">
+					<!--根节点回朔按钮-->
+					<div id="RootNodeBackButton">
+					</div>
+					<!--根节点文本-->
+					<div class="RootNodeText">
+						ParkingPayManager
+					</div>
+				</div>
+				<!--左侧树回退按钮-->
+				<div id="leftTreeBackButton">
+					<!--左侧树回退背景图-->
+					<div id="leftTreeBackButtonImg">
+					</div>
+				</div>
+				<!--左侧树列表-->
+				<div id="leftTreeList">
+
+				</div>
+			</div>
+			<!--显示单位列表栏-->
+			<div id="leftTreeShowButton">
+				<div id="leftTreeShowButtonImg">
+				</div>
+			</div>
+			<!--右侧功能主体-->
+			<div id="rightMain">
+				<!--系统功能条容器-->
+				<div id="systemBarContainer">
+					<!--系统主工具条-->
+					<div id="systemMainBar" class="featureBarCommonStyle">
+						<div id="systemTitle">
+							ParkingPayManager
+						</div>
+					</div>
+					<!-- 能耗在线监测工具条 -->
+					<!--数据管理工具条-->
+					<div id="dataAdminSelectBar" class="featureBarCommonStyle">
+						<!--数据管理:组织机构选择器-->
+                        <!-- dataAdminSelectTitle -->
+							<!-- dataAdminSelector -->
+                        	<!--保存数据按钮-->
+						<div id="dataAdminSaveCurrentDataButton" class="dataAdminButton">保存数据</div>
+                        <div id="dataAdminTableTitie"></div>
+					</div>
+				</div>
+				<!--主页-->
+				<div id="mainPage" class="featureDiv">
+					<div id="mainPageMain"></div>
+{#					<div id="featureInfo"></div>#}
+{#					<div id="dataAdminMainPageButton" class="MainPageButtonCommonStyle">数据管理</div>#}
+
+				</div>
+
+				<!----------------数据管理模块---------------->
+
+				<div id="dataAdmin" class="featureDiv">
+					null
+				</div>
+				<div id="productionWellDailyData" class="featureDiv">
+					<div id="productionWellDailyDataMain">
+						<div id="productionWellDailyDataTable">
+							支付
+						</div>
+					</div>
+				</div>
+				<!----------------正在开发中模块--------------->
+				<div id="developing" class="developingDiv">
+					<!--用户展示-->
+					<img id="developingImg" src="../static/img/main/developing/hshunionDeveloping.png" />
+					<div id="developingTitle">Parking</div>
+				</div>
+			</div>
+			<!-- Operation SQL De To Buger  -->
+			<div id="sqllogdiv" style="display: none;">
+				<div align="center" style=" width: auto; height: 20px; background-color: cornflowerblue;">Operation SQL</div>
+				<div align="center" style="margin-top:2px;" id="sqldiv">
+				</div>
+			</div>
+		</div>
+		<!--尾部-->
+		<div id="foot">
+			Copyright © 2018 Parking 技术支持：Parking
+		</div>
+	</body>

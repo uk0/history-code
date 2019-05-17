@@ -1,0 +1,52 @@
+/**
+ * 主页通用组件放置
+ * 目前系统工具条样式存放在此处
+ */
+
+/**
+ * 系统功能条容器
+ */		
+#systemBarContainer {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	background: #364751;
+	border-bottom: 1px solid #273238;
+	/*border: 1px solid red;*/
+	z-index: 2;
+}
+/**
+ * 主系统功能条
+ */	
+#systemMainBar {
+	left: 0;
+}
+/**
+ * 系统Bar标题
+ */
+#systemTitle {
+	float: left;
+	margin-left: 10px;
+	height: 80px;
+	line-height: 50px;
+	font-size: 25px;
+	font-weight: 900;
+	text-align: center;
+	font-family: "微软雅黑";
+	color: white;
+}
+/*功能条通用样式*/
+.featureBarCommonStyle{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	left: -100%;
+	/*过渡效果*/
+	transition: left 1.5s, opacity 1.5s;
+	-moz-transition: left 1.5s, opacity 1.5s;
+	-webkit-transition: left 1.5s, opacity 1.5s;
+	overflow: hidden;
+}
+

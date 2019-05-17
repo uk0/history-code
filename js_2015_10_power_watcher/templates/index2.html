@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>HuaChing Pay-Manager系统</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/login/login.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/login/pop-up.css" />
+		<script type="text/javascript" src="../static/js/utils/ajax/ajaxUtils.js" charset="utf-8">
+		</script>
+		<script src="../static/js/jquery/jquery.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script src="../static/js/config/config.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script src="../static/js/login/loginAni.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script src="../static/js/login/browser.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script src="../static/js/login/loginBase.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script type="text/javascript">
+			function successFun(data) {
+				if (data.stateCode == 400) {
+					alert('服务商网络不稳定,请稍后重试！');
+					window.location = webPath + "login.html";
+				} else {
+					window.location = webPath + "main.html";
+				}
+			}
+
+			function errorFun(data) {
+			}
+			function login() {
+				if (document.getElementById("pass").value == '' || document.getElementById("pass").value == null) {
+					alert("密码不能为空！");
+				} else {
+					if (document.getElementById("pass").value != "123456") {
+						alert("登录失败请检测您的账号密码！");
+					} else {
+						if (broFlag.flagIe() == false) {
+							document.getElementById("alertDivBoxButton").click();
+							return false;
+						}
+						var actionUrl = serverPath + "login/loginaction";
+						var parems = {
+							"username": document.getElementById("username").value
+						};
+						var sendMethod = "post";
+						ajaxLoad(actionUrl, parems, sendMethod, successFun, errorFun);
+					}
+				}
+			}
+			$(function() {
+				$("#alertDivBoxButton").click(function() {
+					$("#showDiv").show();
+					$("#bg").show();
+					$("#showDiv").addClass("from-below");
+					setTimeout(function() {
+						$("#showDiv").addClass("effeckt-show");
+					}, 300);
+				});
+				$("#clearDivBoxButton,#clear").click(function() {
+					//$("#showDiv").removeClass("effeckt-show");
+					$("#showDiv").hide();
+					$("#bg").hide();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--登录主窗体-->
+		<div id="loginMain">
+			<!--登录标题-->
+			<div id="loginLogo">
+
+			</div>
+			<!--登录标题-->
+			<div id="loginTitle">
+
+			</div>
+			<!--登录欢迎语句-->
+{#			<div id="loginWelcomTitle">#}
+{##}
+{#			</div>#}
+			<!--登录显示图片DIV1-->
+			<div id="loginShowImg1" class="loginShowImg">
+
+			</div>
+			<!--登录显示图片DIV2-->
+			<div id="loginShowImg2" class="loginShowImg">
+
+			</div>
+
+            <!--登录显示图片DIV2-->
+			<div id="loginShowImg3" class="loginShowImg">
+
+			</div>
+			<!--登录主DIV透明背景-->
+			<div id="loginBizBackGround">
+				<!--登录主DIV-->
+				<div id="loginBiz">
+					<div id="loginBizTitle">
+						用户登录
+					</div>
+					<form>
+						<div class="loginInput">
+							用户名
+							<br />
+							<input type="text" id="username" />
+						</div>
+						<div class="loginInput">
+							密码
+							<br />
+							<input type="password" id="pass" />
+						</div>
+						<div id="loginButtons">
+							<input type="button" value="登录" onclick="login()" /> &nbsp;
+							<input type="button" value="注册" onclick="alert('内侧阶段不支持注册功能！')" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--版权控制-->
+{#			<div id="copyRight">#}
+{#				<button id="clearDivBoxButton"></button>#}
+{#				<button id="alertDivBoxButton"></button>#}
+{#			</div>#}
+		</div>
+		<div id="bg"></div>
+		<div class="pop-up" id="showDiv">
+			<div id="showHead" class="showHead">
+				友情提示
+				<div id="clear" class="clear">X</div>
+			</div>
+			<div id="showBody" class="showBody">
+				<span>本系统采用HTML5、CSS3、Echarts、百度GIS等BS技术，为获取最佳使用体验，建议使用如下浏览器：</span>
+				<br>
+				<div class="icon icon-Chrome">&nbsp;</div><a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_49.0.2623.75_Setup.1457073636.exe" id="Chromesoft">下载 Chrome浏览器</a>
+				<br>
+				<div class="icon icon-Firefox">&nbsp;</div><a href="http://download.firefox.com.cn/releases-sha2/stub/official/zh-CN/Firefox-latest.exe" id="Firefoxsoft">下载 Firefox浏览器</a>
+				<br>
+				<div class="icon icon-IE32">&nbsp;</div><a href="http://download.microsoft.com/download/F/2/8/F2871AC4-E82B-4636-BB37-A5F2B14C8616/IE11-Windows6.1-x86-zh-cn.exe" id="ie32soft">下载IE11浏览器(32位)</a>
+				<br>
+				<div class="icon icon-IE64">&nbsp;</div><a href="http://download.microsoft.com/download/5/6/F/56FD6253-CB53-4E38-94C6-74367DA2AB34/IE11-Windows6.1-x64-zh-cn.exe" id="ie64soft">下载IE11浏览器(64位)</a>
+			</div>
+		</div>
+	</body>
+</html>

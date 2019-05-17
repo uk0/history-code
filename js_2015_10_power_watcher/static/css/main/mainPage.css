@@ -1,0 +1,71 @@
+/**
+ * 系统主页功能载体Div
+ * #273238
+ * #364751
+ */
+#mainPageMain{
+	position: absolute;
+	background: #364751;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	
+}
+/**
+ * 功能信息
+ */
+#featureInfo{
+	position: absolute;
+    border: 5px solid #273238;
+    border-radius: 245px;
+    box-shadow: #273238 10px 0px 20px;
+    right: 150px;
+    bottom: 235px;
+    width: 450px;
+    height: 450px;
+    background: #364751;
+    z-index: 2;
+}
+/**
+ * 主页按钮通用样式
+ */
+.MainPageButtonCommonStyle{
+	position: absolute;
+	width: 500px;
+	height: 84px;
+	border: 5px solid #273238;
+	z-index: 1;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 84px;
+	color: #FFF;
+	text-align: center;
+}
+/**
+ * 节能专项按钮样式
+ */
+#energyDataStatisticalMainPageButton{	
+	border-top-left-radius: 42px;
+    right: 400px;
+    bottom: 600px;
+}
+
+#dataAnalysisMainPageButton{
+	border-top-left-radius: 42px;
+    right: 510px;
+    bottom: 511px;
+}
+#energySpecialMainPageButton{
+	right: 510px;
+    bottom: 422px;
+}
+#dataAdminMainPageButton{
+    border-bottom-left-radius: 42px;
+    right: 510px;
+    bottom: 332px;
+}
+#systemAdminMainPageButton{
+	border-bottom-left-radius: 42px;
+    right: 400px;
+    bottom: 242px;
+}

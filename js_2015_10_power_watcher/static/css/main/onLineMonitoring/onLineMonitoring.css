@@ -1,0 +1,36 @@
+/**
+ * 在线监测样式
+ */
+/**
+ * 在线监测默认模块
+ */
+#onLineMonitoring{
+	margin-left: 0%;
+}
+#onLineMonitoringMainControl {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: #364751;
+}
+#onLineMonitoringMainPicture{
+	width : 100%;
+	height : 150px;
+	position: absolute;
+	left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #FFF;
+}
+#onLineMonitoringMainChar{
+	width : 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	z-index: 1;
+	
+}

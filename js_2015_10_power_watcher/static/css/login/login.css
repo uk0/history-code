@@ -1,0 +1,174 @@
+/*通用设置*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑","黑体";
+	/*border: 1px solid black;*/
+}
+/*登录主窗体样式*/
+#loginMain{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -539px;
+	margin-top: -332px;
+	width: 1078px;
+	height: 664px;
+	box-shadow: 0 0 5px 5px darkgrey;
+}
+/*登录标志*/
+#loginLogo{
+	position: absolute;
+	top: 39px;
+	left: 9px;
+	width: 167px;
+	height: 49px;
+	background: url(../../img/login/loginLogo.png) no-repeat;
+	border-right: 1px solid darkgray;
+}
+/*系统名称*/
+#loginTitle{
+	position: absolute;
+	top: 41px;
+	left: 180px;
+	width: 402px;
+	height: 36px;
+	background: url(../../img/login/loginTitle.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;-moz-background-size:100% 100%;
+}
+/*登录欢迎语句*/
+#loginWelcomTitle{
+	position: absolute;
+	top: 84px;
+	right: 44px;
+	width: 327px;
+	height: 17px;
+	background: url(../../img/login/welcomeTitle.png);
+}
+
+/*登录动画*/
+@keyframes imgShowAni{
+	0%{ 
+		opacity: 0;
+	}
+	10%{
+		opacity: 1;
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	} 
+}
+/*登录背景展示Div*/
+.loginShowImg{
+	position: absolute;
+	top: 151px;
+	left: 0px;
+	width: 1078px;
+	height: 388px;
+	
+}
+/*登录背景显示1*/
+#loginShowImg1{
+	background: url(../../img/login/showImg1.png);
+	animation: imgShowAni 12s infinite;
+	-webkit-animation: imgShowAni 12s infinite;
+	-moz-animation: imgShowAni 12s infinite;
+	z-index: 2;
+	background-repeat:no-repeat;
+	background-size:100% 100%;-moz-background-size:100% 100%;
+}
+/*登录背景显示2*/	
+#loginShowImg2{
+	background: url(../../img/login/showImg2.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;-moz-background-size:100% 100%;
+	z-index: 1;
+}
+
+
+/*登录背景显示2*/
+#loginShowImg3{
+	background: url(../../img/login/showImg3.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;-moz-background-size:100% 100%;
+	z-index: 1;
+}
+/*登录背景框*/
+#loginBizBackGround{
+	position: absolute;
+	top: 231px;
+	right: 90px;
+	width: 245px;
+	height: 208px;
+	background: rgba(255,255,255,0.3);
+	z-index: 3;
+	box-shadow: 0 0 3px 2px darkgray;
+}
+/*登录主业务*/
+#loginBiz{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 212px;
+	height: 181px;
+	margin-left: -107px;
+	margin-top: -91px;
+	background: #FFF;
+	border: 2px solid #D8DBDD;
+	z-index: 3;
+}
+/*输入标题*/
+#loginBizTitle{
+	text-align: center;
+	padding: 15px 0 5px 0;
+	font-weight: 900;
+}
+
+#copyRight{
+	position: absolute;
+	width: 270px;
+	height: 20px;
+	bottom: 55px;
+	left: 50%;
+	margin-left: -135px;
+	background: url(../../img/login/softWareCopyRight.png);
+}
+
+/*登录输入框*/
+.loginInput input[type=text],input[type=password]{
+	width: 170px;
+	height: 20px;
+}
+/*登录输入框Div*/
+.loginInput{
+	/*border: 1px solid black;*/
+	padding: 0px 0 0 15px;
+	font-size: 12px;
+	font-weight: 900;
+	margin-bottom: 5px;
+}
+/*登录按钮Div*/
+#loginButtons{
+	padding: 15px 0 0 15px;
+}
+/*登录按钮输入Div*/
+#loginButtons input{
+	width: 80px;
+	height: 25px;
+	color: #FFF;
+	font-size: 15px;
+	font-weight: 900;
+	background: #109DEA;
+	border: #106391;
+	
+}
+#loginButtons input:hover{
+	background: #106391;
+	border: #109DEA;
+	
+	
+}

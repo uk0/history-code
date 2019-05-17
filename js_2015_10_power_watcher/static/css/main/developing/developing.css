@@ -1,0 +1,54 @@
+/*功能步骤图*/
+
+.featureImageStepInfo {
+	margin-left: 15px;
+	display: block;
+}
+
+#developingFeatureRule {
+	margin-left: 15px;
+}
+
+#developingImg {
+	position: absolute;
+	left: -25px;
+	bottom: 0;
+	width: 683px;
+	height: 469px;
+}
+@keyframes developingTitleAni {
+	0% {
+		right: 100px;
+		top: 100px;
+	}
+	25% {
+		right: 200px;
+		top: 100px;
+	}
+	50% {
+		right: 200px;
+		top: 200px;
+	}
+	75% {
+		right: 100px;
+		top: 200px;
+	}
+	100% {
+		right: 100px;
+		top: 100px;
+	}
+}
+#developingTitle {
+	position: absolute;
+	right: 50px;
+	top: 50px;
+	color: #364751;
+	font-size: 50px;
+	font-weight: 900;
+	text-shadow: #273238 1px 1px 5px;
+	/*-webkit-animation: developingTitleAni 5s linear infinite;
+	-moz-animation: developingTitleAni 5s linear infinite;
+	animation: developingTitleAni 5s linear infinite;*/
+	
+}
+

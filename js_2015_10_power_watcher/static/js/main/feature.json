@@ -1,0 +1,24 @@
+{
+	"resultMsg": "数据返回",
+	"stateCode": 200,
+	"sqllog": "readConfig",
+	"resultData": [
+      {
+			"featureId": "1",
+			"featureKey": "dataAdmin",
+			"featureURL": "",
+			"featureName": "支付用户管理",
+			"featureParams": null,
+			"featureList": [
+				{
+					"featureId": "1_1",
+					"featureKey": "productionWellDailyData",
+					"featureURL": "",
+					"featureName": "支付模块",
+					"featureParams": null,
+					"featureList": []
+				}
+			]
+		}
+	]
+}

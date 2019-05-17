@@ -1,0 +1,38 @@
+#dataAdmin{
+	/*
+	 * 注：所有功能div默认margin-left: -100%;
+	 * 通过注册功能控件点击切换事件改变margin-left来达到切换效果，
+	 * 此处默认设置margin-left: 0%;会遮盖主界面所以注释掉，
+	 * 张建新
+	 */
+	/*margin-left: 0%;*/
+}
+#dataAdmin img{
+	/*
+	 * 注：所有功能div默认margin-left: -100%;
+	 * 通过注册功能控件点击切换事件改变margin-left来达到切换效果，
+	 * 此处默认设置margin-left: 0%;会遮盖主界面所以注释掉，
+	 * 张建新
+	 */
+	/*margin-left: 0%;*/
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+}
+.tableContainer{
+	position: absolute;
+	left: 0;
+	right: 0px;
+	top: 0;
+	bottom: 30px;
+}
+.tableStyle{
+	position: absolute;
+	left: 0;
+	right: 0px;
+	top: 0;
+	bottom: 30px;
+	overflow: scroll;
+}
